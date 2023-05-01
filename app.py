@@ -83,4 +83,20 @@ def delete_event(event_id):
 
         return True
 
-#
+# lists all events created in the database 
+
+def list_events():
+    cursor.execute("SELECT * FROM events")
+    results = cursor.fetchall()
+    events = []
+    for result in results:
+        event = {
+            "event_id": result[0],
+            "event_name": result[1],
+            "start_date": result[2],
+            "end_date": result[3],
+            "venue": result[4]
+        }
+        events.append(event)
+    print (events)
+
