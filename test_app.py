@@ -24,7 +24,7 @@ class TestEvents(unittest.TestCase):
         
         # test data 
 
-        #app.create_event("play games","2023-06-15 18:30:00","2023-09-01 20:00:00","home")
+        #app.create_event("roll","2023-06-15 18:30:00","2023-09-01 20:00:00","home")
 
 
 
@@ -39,8 +39,9 @@ class TestEvents(unittest.TestCase):
     def test_create_event(self):
         # Happy path test for create_event function 
         is_created = False
-        app.create_event("play games","2023-06-15 18:30:00","2023-09-01 20:00:00","home")
+        app.create_event("push ","2023-06-15 18:30:00","2023-09-01 20:00:00","home")
         is_created = True
+        print("the event has been created ")
         if is_created == False:
             self.assertRaises(ValueError)
 
